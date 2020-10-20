@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:i_moon/components/rounded_button.dart';
 import 'package:i_moon/constants.dart';
 import 'package:i_moon/screens/login/login_screen.dart';
+import 'package:i_moon/screens/register/register_screen.dart';
 import 'package:i_moon/screens/welcome/components/background.dart';
 
 class Body extends StatelessWidget {
@@ -43,7 +44,16 @@ class Body extends StatelessWidget {
             text: "Register",
             color: kPrimaryLightColor,
             textColor: Colors.black,
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return RegisterScreen();
+                  },
+                ),
+              );
+            },
           ),
         ],
       ),
