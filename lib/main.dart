@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:i_moon/constants.dart';
-import 'package:i_moon/welcome/welcome_screen.dart';
+import 'package:i_moon/screens/welcome/welcome_screen.dart';
 
 void main() {
   runApp(MyApp());
