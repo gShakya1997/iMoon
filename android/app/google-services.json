@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "661024302604",
+    "firebase_url": "https://imoon-d28a4.firebaseio.com",
+    "project_id": "imoon-d28a4",
+    "storage_bucket": "imoon-d28a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661024302604:android:29703fcda54eaea7b9f029",
+        "android_client_info": {
+          "package_name": "com.danfe.i_moon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661024302604-pij0qivpou73dnle1i2m659a8lg4ksif.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1WDisvHBA1EARDbIGAr9rh_Eo0OM9-MY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661024302604-pij0qivpou73dnle1i2m659a8lg4ksif.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
