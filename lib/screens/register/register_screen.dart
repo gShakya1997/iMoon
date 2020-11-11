@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:i_moon/authentication_service.dart';
 // import 'package:i_moon/authentication_service.dart';
 import 'package:i_moon/components/already_have_an_account_check.dart';
@@ -118,7 +119,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         confirmPasswordController.text.trim(),
                         firstnameController.text.trim(),
                         lastnameController.text.trim()
-                      );
+                      ).then((val){
+                        if(val.data["success"]){
+                          Fluttertoast.showToast(
+                            msg: "Registered",
+                            toastLength: Toast.LENGTH_LONG,
+                            gravity: ToastGravity.BOTTOM,
+                            timeInSecForIosWeb: 1,
+                            backgroundColor: Colors.green,
+                            textColor: Colors.white,
+                            fontSize: 16.0,
+                          );
+                        }
+                      });
                       // context.read<AuthenticationSevice>().register(
                       //     email: emailController.text.trim(),
                       //     password: passwordController.text.trim());

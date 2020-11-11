@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'package:i_moon/authentication_service.dart';
 import 'package:i_moon/constants.dart';
 import 'package:i_moon/screens/dashboard/dashboard_screen.dart';
-// import 'package:i_moon/screens/dashboard/dashboard_screen.dart';
-// import 'package:i_moon/screens/login/login_screen.dart';
-// import 'package:i_moon/screens/welcome/welcome_screen.dart';
-// import 'package:provider/provider.dart';
+import 'package:i_moon/screens/register/register_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +28,7 @@ class MyApp extends StatelessWidget {
           primaryColor: kPrimaryColor,
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: DashboardScreen(),
+        home: RegisterScreen(),
       );
   }
 }
