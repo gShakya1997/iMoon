@@ -6,10 +6,8 @@ import 'package:i_moon/components/rounded_input_field.dart';
 import 'package:i_moon/components/rounded_password_field.dart';
 import 'package:i_moon/constants.dart';
 import 'package:i_moon/screens/login/login_screen.dart';
-import 'package:i_moon/screens/register/components/social_icon.dart';
 
 import 'background.dart';
-import 'or_divider.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -24,7 +22,7 @@ class Body extends StatelessWidget {
               "Register",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: size.height * 0.03),
+            SizedBox(height: size.height * 0.03), 
             SvgPicture.asset(
               "assets/icons/signup.svg",
               height: size.height * 0.35,
@@ -54,24 +52,6 @@ class Body extends StatelessWidget {
                   ),
                 );
               },
-            ),
-            OrDivider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SocialIcon(
-                  iconSrc: "assets/icons/facebook.svg",
-                  press: () {},
-                ),
-                SocialIcon(
-                  iconSrc: "assets/icons/google-plus.svg",
-                  press: () {},
-                ),
-                SocialIcon(
-                  iconSrc: "assets/icons/twitter.svg",
-                  press: () {},
-                ),
-              ],
             ),
           ],
         ),

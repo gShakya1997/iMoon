@@ -1,4 +1,4 @@
-package com.example.i_moon
+package com.danfe.i_moon
 
 import io.flutter.embedding.android.FlutterActivity
 
