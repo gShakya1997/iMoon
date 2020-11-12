@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:i_moon/constants.dart';
-import 'package:i_moon/screens/dashboard/dashboard_screen.dart';
+// import 'package:i_moon/screens/dashboard/dashboard_screen.dart';
 import 'package:i_moon/screens/register/register_screen.dart';
 
 Future<void> main() async {
