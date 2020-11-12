@@ -19,7 +19,8 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
   final TextEditingController firstnameController = TextEditingController();
   final TextEditingController lastnameController = TextEditingController();
 
@@ -113,14 +114,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
                     color: kPrimaryColor,
                     onPressed: () {
-                      AuthenticationSevice().register(
-                        emailController.text.trim(),
-                        passwordController.text.trim(),
-                        confirmPasswordController.text.trim(),
-                        firstnameController.text.trim(),
-                        lastnameController.text.trim()
-                      ).then((val){
-                        if(val.data["success"]){
+                      AuthenticationSevice()
+                          .register(
+                              emailController.text.trim(),
+                              passwordController.text.trim(),
+                              confirmPasswordController.text.trim(),
+                              firstnameController.text.trim(),
+                              lastnameController.text.trim())
+                          .then((val) {
+                        if (val.data["success"]) {
                           Fluttertoast.showToast(
                             msg: "Registered",
                             toastLength: Toast.LENGTH_LONG,
@@ -129,6 +131,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             backgroundColor: Colors.green,
                             textColor: Colors.white,
                             fontSize: 16.0,
+                          );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return LoginScreen();
+                            }),
                           );
                         }
                       });

@@ -3,6 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:i_moon/authentication_service.dart';
 import 'package:i_moon/components/already_have_an_account_check.dart';
 import 'package:i_moon/components/text_field_container.dart';
+import 'package:i_moon/screens/dashboard/dashboard_screen.dart';
 import 'package:i_moon/screens/register/register_screen.dart';
 import 'package:i_moon/constants.dart';
 import 'package:flutter_svg/svg.dart';
@@ -87,6 +88,12 @@ class _LoginScreenState extends State<LoginScreen> {
                             backgroundColor: Colors.green,
                             textColor: Colors.white,
                             fontSize: 16.0,
+                          );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return DashboardScreen();
+                            }),
                           );
                         } else {
                           Fluttertoast.showToast(
