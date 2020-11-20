@@ -7,6 +7,7 @@ import 'package:jitsi_meet/jitsi_meet.dart';
 import 'package:jitsi_meet/jitsi_meeting_listener.dart';
 import 'package:jitsi_meet/room_name_constraint.dart';
 import 'package:jitsi_meet/room_name_constraint_type.dart';
+import 'package:uuid/uuid.dart';
 
 class CreateMeeting extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class CreateMeeting extends StatefulWidget {
 
 class _CreateMeetingState extends State<CreateMeeting> {
   String companyName = "iMoon";
-  String roomCode = "8sk022";
+  var roomCode = Uuid().v4().substring(0,6);
   final nameText = TextEditingController();
   final subjectText = TextEditingController();
   var isAudioMuted = false;
@@ -149,6 +150,7 @@ class _CreateMeetingState extends State<CreateMeeting> {
       var options = JitsiMeetingOptions()
         ..room = companyName + roomCode
         ..subject = subjectText.text
+        ..userDisplayName = nameText.text
         ..audioMuted = isAudioMuted
         ..videoMuted = isVideoMuted
         ..featureFlags.addAll(featureFlags);
@@ -168,18 +170,6 @@ class _CreateMeetingState extends State<CreateMeeting> {
       debugPrint("error: $error");
     }
   }
-
-  static final Map<RoomNameConstraintType, RoomNameConstraint>
-      customContraints = {
-    RoomNameConstraintType.MAX_LENGTH: new RoomNameConstraint((value) {
-      return value.trim().length <= 50;
-    }, "Maximum room name length should be 30."),
-    RoomNameConstraintType.FORBIDDEN_CHARS: new RoomNameConstraint((value) {
-      return RegExp(r"[$€£]+", caseSensitive: false, multiLine: false)
-              .hasMatch(value) ==
-          false;
-    }, "Currencies characters aren't allowed in room names."),
-  };
 
   void _onConferenceWillJoin({message}) {
     debugPrint("_onConferenceWillJoin broadcasted with message: $message");
